@@ -65,11 +65,14 @@
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 2rem;
+      /* Adjusted padding for better mobile spacing */
+      padding: 0 1rem;
     }
 
     .section {
       scroll-margin-top: 80px; /* Added to account for fixed header */
+      padding-top: 5rem;
+      padding-bottom: 5rem;
     }
 
     /* Header & Nav */
@@ -150,7 +153,7 @@
       align-items: center;
       text-align: left;
       padding-top: 5rem;
-      padding-bottom: 5rem;
+      padding-bottom: 0; /* Adjusted: Removed padding to eliminate the gap */
     }
 
     .hero__container {
@@ -162,7 +165,7 @@
       font-size: 3.5rem;
       margin: 0 0 0.3rem;
       line-height: 1.1;
-      background: linear-gradient(90deg, #b893ff, #8c7ae6);
+      background: linear-gradient(90deg, #730af4, #1207eb);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -215,10 +218,10 @@
     /* About Section */
     .about {
       background: linear-gradient(135deg, #e8e3f9 0%, #f6f4fe 100%);
-      padding: 5rem 0 6rem;
+      padding: 0 0 6rem; /* Adjusted: Removed top padding */
       border-radius: 24px;
       box-shadow: var(--shadow-light);
-      margin-top: 3rem;
+      margin-top: 0; /* Adjusted: Removed margin to eliminate the gap */
       color: var(--color-text-secondary);
     }
 
@@ -261,6 +264,10 @@
       background-clip: text;
       color: transparent;
     }
+    
+    .text-center {
+      text-align: center;
+    }
 
     .about__image-container {
       flex: 1 1 380px;
@@ -302,7 +309,8 @@
 
     .services__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      /* Adjusted minmax to be more fluid for mobile */
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2.2rem;
       margin-top: 2rem;
       max-width: 1200px;
@@ -375,7 +383,8 @@
 
     .reviews__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      /* Adjusted minmax for better mobile responsiveness */
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
@@ -428,7 +437,8 @@
 
     .photos__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+      /* Adjusted grid for better mobile responsiveness */
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 1.5rem;
       max-width: 1200px;
       margin: 0 auto;
@@ -508,6 +518,7 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow-light);
       color: var(--color-text-primary);
+      text-align: center;
     }
 
     .contact__info h2,
@@ -531,8 +542,8 @@
 
     .contact__hours ul {
       margin: 0;
-      padding-left: 1.2rem;
-      list-style-type: disc;
+      padding: 0;
+      list-style-type: none;
       color: var(--color-text-secondary);
     }
 
@@ -585,12 +596,29 @@
 
     /* Responsive */
     @media only screen and (max-width: 768px) {
+      /* Adjusted spacing for smaller screens */
+      body {
+        padding: 0;
+      }
+      .container {
+        width: 100%;
+        padding: 0 1rem;
+      }
+      .section {
+        padding: 3rem 1rem;
+      }
+      /* About section fix */
       .about__container {
         flex-direction: column-reverse;
         text-align: center;
       }
+      .about__text,
       .about__image-container {
-        max-width: 90%;
+        /* This is the key fix to override the fixed flex-basis on desktop */
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+      .about__image-container {
         margin: 0 auto 2rem auto;
       }
       .nav__menu {
@@ -663,7 +691,7 @@
   <section class="about section" id="about" aria-label="About Expert Dry Cleaners">
     <div class="container about__container">
       <div class="about__text">
-        <h2 class="section__title accent-font">About Us</h2>
+        <h2 class="section__title accent-font text-center">About Us</h2>
         <p>
           Expert Dry Cleaners is your trusted name for professional fabric care.
           We specialize in handling delicate fabrics and garments with expert
@@ -691,7 +719,7 @@
   <!-- Services Section -->
   <section class="services section" id="services" aria-label="Our Dry Cleaning Services">
     <div class="container">
-      <h2 class="section__title accent-font">Our Services</h2>
+      <h2 class="section__title accent-font text-center">Our Services</h2>
       <div class="services__grid">
         <article class="service-card" tabindex="0">
           <div class="service-icon">👔</div>
@@ -743,7 +771,7 @@
   <!-- Reviews Section -->
   <section class="reviews section" id="reviews" aria-label="Customer Reviews">
     <div class="container">
-      <h2 class="section__title accent-font">Customer Reviews</h2>
+      <h2 class="section__title accent-font text-center">Customer Reviews</h2>
       <div class="reviews__grid">
         <blockquote class="review-card" tabindex="0">
           <p>
@@ -779,7 +807,7 @@
   <!-- Photos Section -->
   <section class="photos section" id="photos" aria-label="Gallery of Our Work">
     <div class="container">
-      <h2 class="section__title accent-font">Our Work</h2>
+      <h2 class="section__title accent-font text-center">Our Work</h2>
       <div class="photos__grid">
         <figure class="photo-card">
           <img src="https://img.freepik.com/free-photo/multi-colored-garments-hang-coathangers-retail-store-generated-by-ai_188544-19853.jpg" alt="Professional dry cleaning process" loading="lazy"/>
@@ -807,18 +835,17 @@
   <section class="contact section" id="contact" aria-label="Contact Information and Business Hours">
     <div class="container contact__container">
       <div class="contact__info">
-        <h2 class="section__title accent-font">Contact Us</h2>
+        <h2 class="section__title accent-font text-center">Contact Us</h2>
         <p><strong>Phone:</strong> <a href="tel:+918983552515" aria-label="Call phone number +91 8983552515">+91 8983552515</a></p>
         <p><strong>Email:</strong> <a href="mailto:tarun.katta66@gmail.com" aria-label="Send email to tarun.katta66@gmail.com">tarun.katta66@gmail.com</a></p>
         <p><strong>Address:</strong> Nyati Estate, Shop No 5, Near Nyati Estate, Mohamadwadi, Pune-411060</p>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=Expert+Dry+Cleaners+Nyati+Estate,+Shop+No+5,+Near+Nyati+Estate,+Mohamadwadi,+Pune-411060" target="_blank" rel="noopener noreferrer" aria-label="View Expert Dry Cleaners location on Google Maps">View on Google Maps</a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=Expert+Dry+Cleaners+Nyati+Estate,+Shop+No 5,+Near+Nyati+Estate,+Mohamadwadi,+Pune-411060" target="_blank" rel="noopener noreferrer" aria-label="View Expert Dry Cleaners location on Google Maps">View on Google Maps</a></p>
       </div>
       <div class="contact__hours">
-        <h2 class="section__title accent-font">Business Hours</h2>
+        <h2 class="section__title accent-font text-center">Business Hours</h2>
         <ul>
-          <li><strong>Monday - Friday:</strong> 8:00 AM - 7:00 PM</li>
-          <li><strong>Saturday:</strong> 9:00 AM - 5:00 PM</li>
-          <li><strong>Sunday:</strong> Closed</li>
+          <li><strong>Monday -Sunday:</strong> 9:00 AM - 9:00 PM</li>
+          <li><strong>Thursday:</strong> Closed</li>
         </ul>
       </div>
     </div>
