@@ -1,438 +1,869 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Dry Cleaners - Premium Laundry & Dry Cleaning Services</title>
-    <meta name="description" content="Expert Dry Cleaners offers premium dry cleaning, laundry, alterations, and shoe cleaning services in Pune. Eco-friendly and professional garment care.">
-    <meta name="keywords" content="dry cleaning, laundry service, alterations, shoe laundry, commercial laundry, Pune, Mohamadwadi, garment care, eco-friendly dry cleaning">
-    <meta name="author" content="Tarun Katta">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Expert Dry Cleaners | Premium Eco-Friendly Fabric Care in Pune</title>
+  <meta name="description" content="Expert Dry Cleaners offers professional dry cleaning, eco-friendly cleaning, specialty garment care, express services, and tailoring in Pune. Trusted for delicate fabrics and sustainable methods." />
+  <meta name="keywords" content="dry cleaning Pune, eco-friendly dry cleaning, wedding dress cleaning, professional laundry services, fabric care, express dry cleaning, garment repair Pune" />
+  <meta name="author" content="Tarun Katta" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.expertdrycleaners.com/" />
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom Tailwind Config for Han Purple -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        hanpurple: {
-                            DEFAULT: '#5218fa', // Base Han Purple
-                            50: '#ede8fe',
-                            100: '#e3dcfd',
-                            200: '#c7bafb',
-                            300: '#ab98f9',
-                            400: '#8f76f8',
-                            500: '#7354f6',
-                            600: '#5218fa', // Deep shade for accents
-                            700: '#4113cb',
-                            800: '#300e9a',
-                            900: '#20096a',
-                            950: '#100535',
-                        }
-                    },
-                    // Adding custom screen sizes for more granular control if needed
-                    screens: {
-                        'xs': '475px', // Extra small screens
-                        // Default Tailwind breakpoints: sm, md, lg, xl, 2xl
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Google Fonts - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth; /* Smooth scrolling for navigation */
-        }
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 8px;
-            margin-bottom: 2rem;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60%;
-            height: 3px;
-            background-color: #5218fa; /* Han Purple */
-            border-radius: 9999px;
-        }
-        /* Star SVG styling */
-        .star-icon {
-            fill: #FFD700; /* Gold color for stars */
-            width: 20px;
-            height: 20px;
-            /* Ensure stars are responsive too */
-            flex-shrink: 0; /* Prevent shrinking on small screens */
-        }
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Expert Dry Cleaners | Premium Eco-Friendly Fabric Care in Pune" />
+  <meta property="og:description" content="Trusted professional dry cleaning and garment care services in Pune. Offering eco-friendly methods, express service, and repairs." />
+  <meta property="og:url" content="https://www.expertdrycleaners.com/" />
+  <meta property="og:image" content="https://www.expertdrycleaners.com/og-image.jpg" />
 
-        /* Custom styles for mobile menu transition */
-        #mobile-menu {
-            transition: all 0.3s ease-in-out;
-        }
-    </style>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Expert Dry Cleaners | Premium Eco-Friendly Fabric Care in Pune" />
+  <meta name="twitter:description" content="Professional dry cleaning, eco-friendly cleaning, express services, and tailoring in Pune." />
+  <meta name="twitter:image" content="https://www.expertdrycleaners.com/twitter-image.jpg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-gradient-start: #667eea;
+      --color-gradient-end: #764ba2;
+      --color-primary: #564d93;
+      --color-secondary: #8c7ae6;
+      --color-accent: #b893ff;
+      --color-text-primary: #222222;
+      --color-text-secondary: #555555;
+      --color-bg-light: #faf9fc;
+      --font-primary: 'Inter', sans-serif;
+      --font-secondary: 'Playfair Display', serif;
+      --radius: 15px;
+      --shadow-light: 0 4px 16px rgba(102, 126, 234, 0.15);
+      --shadow-dark: 0 6px 20px rgba(54, 49, 174, 0.25);
+      scroll-behavior: smooth;
+      --color-gradient-alt-start: #6a11cb;
+      --color-gradient-alt-mid: #2575fc;
+      --color-gradient-alt-end: #6a11cb;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--color-bg-light);
+      font-family: var(--font-primary);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section {
+      scroll-margin-top: 80px; /* Added to account for fixed header */
+    }
+
+    /* Header & Nav */
+    .header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      background: linear-gradient(135deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%);
+      box-shadow: var(--shadow-dark);
+      transition: 0.3s ease;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0;
+    }
+
+    .nav__logo h1 {
+      font-family: var(--font-secondary);
+      font-weight: 600;
+      color: white;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    .nav__menu {
+      display: flex;
+    }
+
+    .nav__list {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav__link {
+      text-decoration: none;
+      font-weight: 500;
+      color: white;
+      font-size: 1rem;
+      padding: 0.5rem 0.7rem;
+      border-radius: var(--radius);
+      transition: background-color 0.3s ease;
+    }
+
+    .nav__link:hover,
+    .nav__link:focus {
+      background-color: var(--color-accent);
+      outline: none;
+    }
+
+    .nav__toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      width: 28px;
+      height: 22px;
+      justify-content: space-between;
+    }
+
+    .nav__toggle span {
+      height: 3px;
+      background-color: white;
+      border-radius: 3px;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+      color: white;
+      display: flex;
+      align-items: center;
+      text-align: left;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .hero__container {
+      max-width: 700px;
+    }
+
+    .hero__title {
+      font-family: var(--font-secondary);
+      font-size: 3.5rem;
+      margin: 0 0 0.3rem;
+      line-height: 1.1;
+      background: linear-gradient(90deg, #b893ff, #8c7ae6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero__subtitle {
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .hero__desc {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      opacity: 0.85;
+    }
+
+    .btn {
+      display: inline-block;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      padding: 0.75rem 2rem;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background-position 0.4s ease, opacity 0.3s ease;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      text-align: center;
+      background: linear-gradient(135deg, #7c70f0, #ff90aa);
+      background-size: 200% 200%;
+      background-position: 0% 50%;
+      color: white;
+      box-shadow: var(--shadow-light);
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-position: 100% 50%;
+      opacity: 0.95;
+      outline: none;
+    }
+
+    /* About Section */
+    .about {
+      background: linear-gradient(135deg, #e8e3f9 0%, #f6f4fe 100%);
+      padding: 5rem 0 6rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow-light);
+      margin-top: 3rem;
+      color: var(--color-text-secondary);
+    }
+
+    .about__container {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .about__text {
+      flex: 1 1 400px;
+      font-size: 1.16rem;
+      line-height: 1.75;
+      font-weight: 400;
+    }
+
+    .about__text p {
+      margin-bottom: 1.25rem;
+    }
+
+    .section__title {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--color-primary);
+      background: linear-gradient(90deg, #7c70f0, #ff90aa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .accent-font {
+      font-family: var(--font-secondary);
+      font-weight: 600;
+      background: linear-gradient(135deg, #f37fff, #a28cfd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .about__image-container {
+      flex: 1 1 380px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-dark);
+      transform-style: preserve-3d;
+      transition: transform 0.4s ease;
+      will-change: transform;
+      cursor: default;
+    }
+
+    .about__image-container:hover {
+      transform: rotateY(8deg) rotateX(4deg) scale(1.05);
+    }
+
+    .about__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: var(--radius);
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Services Section */
+    .services {
+      padding: 8rem 4rem 7rem;
+      background: linear-gradient(135deg, #7c70f0, #a28cfd);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(109, 101, 255, 0.12);
+      color: rgb(168, 56, 56);
+      overflow: hidden;
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.2rem;
+      margin-top: 2rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .service-card {
+      background: white;
+      border-radius:26px;
+      box-shadow: var(--shadow-light);
+      padding: 1.2rem 2.4rem ;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      border: 3px solid transparent;
+      position: relative;
+      z-index: 0;
+      background-clip: padding-box;
+      box-sizing: border-box;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      padding: 3px;
+      background-image: linear-gradient(45deg, #9090ff, #f37fff, #ff90aa);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      z-index: -1;
+      transition: filter 0.3s ease;
+      mask-mode: luminance;
+      -webkit-mask-mode: luminance;
+    }
+
+    .service-card:hover,
+    .service-card:focus {
+      box-shadow: var(--shadow-dark);
+      transform: translateY(-6px);
+      outline: none;
+    }
+
+    .service-card:hover::before {
+      filter: brightness(1.1);
+    }
+
+    .service-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.2rem;
+      color: var(--color-secondary);
+    }
+
+    /* Reviews Section */
+    .reviews {
+      padding: 6rem 0 6rem;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(252, 234, 187, 0.15);
+      color: #3d2e00;
+    }
+
+    .reviews__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .review-card {
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-light);
+      padding: 1.5rem 2rem;
+      font-style: italic;
+      color: var(--color-text-secondary);
+      position: relative;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .review-card:hover,
+    .review-card:focus {
+      box-shadow: var(--shadow-dark);
+      outline: none;
+    }
+
+    .review-card p {
+      margin: 0 0 0.8rem 0;
+    }
+
+    .review-card cite {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--color-primary);
+      position: absolute;
+      bottom: 1rem;
+      right: 1.7rem;
+    }
+
+    /* Photos Section */
+    .photos {
+      padding: 6rem 0 6rem;
+      background: linear-gradient(135deg, var(--color-gradient-alt-start), var(--color-gradient-alt-mid), var(--color-gradient-alt-end));
+      border-radius: 24px;
+      box-shadow: var(--shadow-dark);
+      color: white;
+    }
+
+    .photos .section__title {
+      color: #fafafa;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 2.8rem;
+    }
+
+    .photos__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .photo-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      /* Enforce a consistent aspect ratio */
+      padding-top: 66.66%; /* 3:2 Aspect Ratio (2/3 = 0.6666...) */
+    }
+
+    .photo-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to bottom right, rgba(106,17,203,0.45), rgba(37,117,252,0.25));
+      mix-blend-mode: multiply;
+      transition: 0.4s ease;
+      pointer-events: none;
+    }
+
+    .photo-card img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This is key for fixing the image aspect ratio */
+        display: block;
+        transition: transform 0.4s ease;
+    }
+
+    .photo-card:hover img, .photo-card:focus-within img {
+      transform: scale(1.1);
+    }
+    
+    .photo-card:hover, .photo-card:focus-within {
+      transform: scale(1.05);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    }
+
+    .photo-card:hover::before, .photo-card:focus-within::before {
+      background-image: linear-gradient(to bottom right, rgba(106,17,203,0.65), rgba(37,117,252,0.45));
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 4rem 0 4rem;
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(135deg, #b3c7f9, #f9d5e5);
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(179, 199, 249, 0.15);
+      color: #2f2a3d;
+    }
+
+    .contact__container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      max-width: 600px;
+      width: 100%;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+
+    .contact__info,
+    .contact__hours {
+      flex: 1 1 280px;
+      background: white;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-light);
+      color: var(--color-text-primary);
+    }
+
+    .contact__info h2,
+    .contact__hours h2 {
+      font-family: var(--font-secondary);
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, #f37fff, #a28cfd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .contact__info p {
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+    }
+
+    .contact__hours ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      list-style-type: disc;
+      color: var(--color-text-secondary);
+    }
+
+    .contact__hours li {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+      padding: 1.1rem 0;
+      text-align: center;
+      color: white;
+      font-weight: 500;
+      font-size: 0.95rem;
+      box-shadow: 0 -3px 20px rgba(54, 49, 174, 0.2);
+    }
+
+    .footer a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover,
+    .footer a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    .footer .footer-credit {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1rem;
+      margin-top: 2px;
+      color: #d8b7ff;
+    }
+
+    .footer .footer-credit a {
+      color: #d8b7ff;
+      text-decoration: none;
+    }
+
+    .footer .footer-credit a:hover,
+    .footer .footer-credit a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    /* Responsive */
+    @media only screen and (max-width: 768px) {
+      .about__container {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .about__image-container {
+        max-width: 90%;
+        margin: 0 auto 2rem auto;
+      }
+      .nav__menu {
+        flex-direction: column;
+        position: fixed;
+        top: 65px;
+        right: -100%;
+        background: var(--color-gradient-start);
+        width: 75vw;
+        height: 100vh;
+        transition: right 0.3s ease;
+        border-radius: 0 0 0 var(--radius);
+      }
+      .nav__menu.show {
+        right: 0;
+      }
+      .nav__toggle {
+        display: flex;
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      .hero__title {
+        font-size: 2.7rem;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="nav container" role="navigation" aria-label="Main navigation">
+      <div class="nav__logo">
+        <h1>Expert Dry Cleaners</h1>
+      </div>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+          <li class="nav__item"><a href="#reviews" class="nav__link">Reviews</a></li>
+          <li class="nav__item"><a href="#photos" class="nav__link">Photos</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+          <li class="nav__item"><a href="#timings" class="nav__link">Timings</a></li>
+        </ul>
+      </div>
+      <div class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
-    <!-- Header and Navigation -->
-    <header class="bg-white shadow-md sticky top-0 z-50" aria-label="Main navigation">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-hanpurple-700 rounded-lg p-2 hover:bg-hanpurple-50 transition duration-300 focus:outline-none focus:ring-2 focus:ring-hanpurple-500" aria-label="Expert Dry Cleaners home">Expert Dry Cleaners</a>
+  <!-- Hero Section -->
+  <section class="hero" id="home" aria-label="Hero Introduction">
+    <div class="hero__container container">
+      <div class="hero__content">
+        <h1 class="hero__title">Expert Dry Cleaners</h1>
+        <h2 class="hero__subtitle">Premium Fabric Care</h2>
+        <p class="hero__desc">
+          Professional dry cleaning services with expert care for your garments.
+        </p>
+        <a href="#contact" class="btn btn--gradient">Book Now</a>
+      </div>
+    </div>
+  </section>
 
-            <!-- Hamburger Menu Button (visible on small screens, hidden on medium and up) -->
-            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-hanpurple-50 focus:outline-none focus:ring-2 focus:ring-hanpurple-500" aria-label="Open main menu" aria-expanded="false">
-                <!-- Hamburger Icon -->
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path id="menu-icon-path-1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16"></path>
-                    <path id="menu-icon-path-2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16"></path>
-                    <path id="menu-icon-path-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16"></path>
-                </svg>
-            </button>
+  <!-- About Section -->
+  <section class="about section" id="about" aria-label="About Expert Dry Cleaners">
+    <div class="container about__container">
+      <div class="about__text">
+        <h2 class="section__title accent-font">About Us</h2>
+        <p>
+          Expert Dry Cleaners is your trusted name for professional fabric care.
+          We specialize in handling delicate fabrics and garments with expert
+          attention to detail. Our eco-friendly cleaning methods ensure your
+          clothes are not only spotless but also safe for the environment.
+        </p>
+        <p>
+          With years of experience, our team expertly removes tough stains,
+          restores colors, and handles specialty garments like wedding dresses,
+          leather, and suede. We pride ourselves on authenticity, sustainability,
+          and premium quality service.
+        </p>
+      </div>
+      <figure class="about__image-container" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+          alt="Professional dry cleaner handling delicate fabric"
+          class="about__image"
+          loading="lazy"
+        />
+      </figure>
+    </div>
+  </section>
 
-            <!-- Navigation Links (hidden by default on small, flex on medium and up) -->
-            <div id="mobile-menu" class="hidden md:flex flex-col md:flex-row mt-4 md:mt-0 md:space-x-4 space-y-2 md:space-y-0 w-full md:w-auto items-center md:justify-end" role="navigation">
-                <a href="#about" class="text-gray-700 hover:text-hanpurple-600 font-medium px-3 py-2 rounded-md hover:bg-hanpurple-50 transition duration-300 w-full text-center md:w-auto focus:outline-none focus:ring-2 focus:ring-hanpurple-500">About Us</a>
-                <a href="#services" class="text-gray-700 hover:text-hanpurple-600 font-medium px-3 py-2 rounded-md hover:bg-hanpurple-50 transition duration-300 w-full text-center md:w-auto focus:outline-none focus:ring-2 focus:ring-hanpurple-500">Services</a>
-                <a href="#timings" class="text-gray-700 hover:text-hanpurple-600 font-medium px-3 py-2 rounded-md hover:bg-hanpurple-50 transition duration-300 w-full text-center md:w-auto focus:outline-none focus:ring-2 focus:ring-hanpurple-500">Timings</a>
-                <a href="#reviews" class="text-gray-700 hover:text-hanpurple-600 font-medium px-3 py-2 rounded-md hover:bg-hanpurple-50 transition duration-300 w-full text-center md:w-auto focus:outline-none focus:ring-2 focus:ring-hanpurple-500">Reviews</a>
-                <a href="#contact" class="text-gray-700 hover:text-hanpurple-600 font-medium px-3 py-2 rounded-md hover:bg-hanpurple-50 transition duration-300 w-full text-center md:w-auto focus:outline-none focus:ring-2 focus:ring-hanpurple-500">Contact</a>
-                <a href="#location" class="text-gray-700 hover:text-hanpurple-600 font-medium px-3 py-2 rounded-md hover:bg-hanpurple-50 transition duration-300 w-full text-center md:w-auto focus:outline-none focus:ring-2 focus:ring-hanpurple-500">Location</a>
-                <a href="#gallery" class="text-gray-700 hover:text-hanpurple-600 font-medium px-3 py-2 rounded-md hover:bg-hanpurple-50 transition duration-300 w-full text-center md:w-auto focus:outline-none focus:ring-2 focus:ring-hanpurple-500">Gallery</a>
-            </div>
-        </nav>
-    </header>
+  <!-- Services Section -->
+  <section class="services section" id="services" aria-label="Our Dry Cleaning Services">
+    <div class="container">
+      <h2 class="section__title accent-font">Our Services</h2>
+      <div class="services__grid">
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">👔</div>
+          <h3>Standard Dry Cleaning</h3>
+          <p>
+            Professional cleaning for formal wear and delicate fabrics using
+            specialized solvents.
+          </p>
+        </article>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="bg-hanpurple-700 text-white py-16 md:py-20 text-center rounded-b-lg shadow-lg" aria-labelledby="hero-title">
-            <div class="container mx-auto px-4">
-                <h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Your Clothes, Our Expertise</h1>
-                <p class="text-base md:text-lg mb-8 max-w-2xl mx-auto">Premium dry cleaning and laundry services for a fresh, clean wardrobe.</p>
-                <a href="#services" class="bg-white text-hanpurple-700 hover:bg-hanpurple-100 font-bold py-2.5 px-6 sm:py-3 sm:px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">Discover Our Services</a>
-            </div>
-        </section>
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">🌿</div>
+          <h3>Eco-Friendly Cleaning</h3>
+          <p>
+            Sustainable cleaning methods with biodegradable solvents and
+            eco-conscious processes.
+          </p>
+        </article>
 
-        <!-- About Us Section -->
-        <section id="about" class="py-12 md:py-16 bg-white rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6" aria-labelledby="about-us-title">
-            <div class="container mx-auto px-4">
-                <h2 id="about-us-title" class="text-2xl sm:text-3xl font-bold text-gray-900 section-title">About Expert Dry Cleaners</h2>
-                <div class="flex flex-col md:flex-row items-center md:space-x-8">
-                    <div class="md:w-1/2 mb-6 md:mb-0">
-                        <img src="https://png.pngtree.com/thumb_back/fw800/background/20231005/pngtree-illustration-of-a-line-of-washing-machines-in-a-public-laundromat-image_13527845.png"
-                             alt="Illustration of washing machines in a laundromat"
-                             class="rounded-lg shadow-lg w-full h-auto object-cover max-h-80"
-                             loading="lazy"
-                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/E0E0E0/333333?text=Image+Not+Found';">
-                    </div>
-                    <div class="md:w-1/2">
-                        <p class="text-base md:text-lg leading-relaxed mb-4 text-gray-700">
-                            Welcome to Expert Dry Cleaners, where we combine traditional care with modern techniques to deliver unparalleled garment cleaning. With over 20 years of experience, we are dedicated to preserving the quality and extending the life of your cherished clothing.
-                        </p>
-                        <p class="text-base md:text-lg leading-relaxed text-gray-700">
-                            Our team of skilled professionals uses eco-friendly solvents and state-of-the-art equipment to ensure every item, from delicate silks to heavy draperies, receives the meticulous attention it deserves. Your satisfaction is our top priority.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">👗</div>
+          <h3>Specialty Garment Care</h3>
+          <p>
+            Expert care for wedding dresses, leather, suede, and luxury fabrics.
+          </p>
+        </article>
 
-        <!-- Services Section -->
-        <section id="services" class="py-12 md:py-16 bg-gray-100 rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6" aria-labelledby="services-title">
-            <div class="container mx-auto px-4">
-                <h2 id="services-title" class="text-2xl sm:text-3xl font-bold text-gray-900 section-title">Our Services</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    <!-- Service Card 1 -->
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1" role="article" aria-labelledby="dry-cleaning-title">
-                        <h3 id="dry-cleaning-title" class="text-xl font-semibold text-hanpurple-600 mb-3">Dry Cleaning</h3>
-                        <p class="text-gray-700 text-sm md:text-base">Expert dry cleaning for all types of garments, including suits, dresses, and delicate fabrics. We use gentle, effective methods.</p>
-                    </div>
-                    <!-- Service Card 2 -->
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1" role="article" aria-labelledby="commercial-laundry-title">
-                        <h3 id="commercial-laundry-title" class="text-xl font-semibold text-hanpurple-600 mb-3">Commercial Laundry Services</h3>
-                        <p class="text-gray-700 text-sm md:text-base">Scalable, professional-grade cleaning solutions tailored for hotels, hospitals, gyms, and businesses that demand freshness at volume.</p>
-                    </div>
-                    <!-- Service Card 3 -->
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1" role="article" aria-labelledby="alterations-title">
-                        <h3 id="alterations-title" class="text-xl font-semibold text-hanpurple-600 mb-3">Alterations & Repairs</h3>
-                        <p class="text-gray-700 text-sm md:text-base">From minor repairs to custom alterations, our skilled tailors ensure your clothes fit perfectly and look their best.</p>
-                    </div>
-                    <!-- Service Card 4 -->
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1" role="article" aria-labelledby="shoe-laundry-title">
-                        <h3 id="shoe-laundry-title" class="text-xl font-semibold text-hanpurple-600 mb-3">Shoe Laundry Service</h3>
-                        <p class="text-gray-700 text-sm md:text-base">A professional cleaning solution that restores your favorite footwear to its fresh, spotless glory—one sole at a time.</p>
-                    </div>
-                    <!-- Service Card 5 -->
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1" role="article" aria-labelledby="wash-iron-title">
-                        <h3 id="wash-iron-title" class="text-xl font-semibold text-hanpurple-600 mb-3">Wash & Iron</h3>
-                        <p class="text-gray-700 text-sm md:text-base">Careful and specialized cleaning for leather and suede garments, restoring their look and feel.</p>
-                    </div>
-                    <!-- Service Card 6 -->
-                    <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1" role="article" aria-labelledby="wash-fold-title">
-                        <h3 id="wash-fold-title" class="text-xl font-semibold text-hanpurple-600 mb-3">Wash & Fold</h3>
-                        <p class="text-gray-700 text-sm md:text-base">Hassle-free laundry service that cleans, dries, and neatly folds your clothes—ready to wear or store.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">⚡</div>
+          <h3>Express Service</h3>
+          <p>Same-day cleaning service for urgent needs and last-minute events.</p>
+        </article>
 
-        <!-- Customer Reviews Section -->
-        <section id="reviews" class="py-12 md:py-16 bg-white rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6" aria-labelledby="reviews-title">
-            <div class="container mx-auto px-4">
-                <h2 id="reviews-title" class="text-2xl sm:text-3xl font-bold text-gray-900 section-title">What Our Customers Say</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    <!-- Review Card 1 -->
-                    <div class="bg-hanpurple-50 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-                        <div class="flex mb-3" aria-label="5 star rating">
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                        </div>
-                        <p class="text-gray-800 italic mb-4 text-sm md:text-base">"Absolutely fantastic service! My delicate silk dress came back looking brand new. The staff is incredibly professional and friendly. Highly recommend!"</p>
-                        <p class="font-semibold text-hanpurple-700 text-sm md:text-base">- Priya Sharma</p>
-                    </div>
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">👕</div>
+          <h3>Laundry Services</h3>
+          <p>Professional wash and fold services for everyday garments.</p>
+        </article>
 
-                    <!-- Review Card 2 -->
-                    <div class="bg-hanpurple-50 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-                        <div class="flex mb-3" aria-label="5 star rating">
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                        </div>
-                        <p class="text-gray-800 italic mb-4 text-sm md:text-base">"I've been coming here for years for my suits and formal wear. The quality of cleaning is consistently excellent, and their alterations service is top-notch. Always a pleasure!"</p>
-                        <p class="font-semibold text-hanpurple-700 text-sm md:text-base">- Rahul Verma</p>
-                    </div>
+        <article class="service-card" tabindex="0">
+          <div class="service-icon">✂️</div>
+          <h3>Repairs & Alterations</h3>
+          <p>Professional tailoring including hemming, alterations, and repairs.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-                    <!-- Review Card 3 -->
-                    <div class="bg-hanpurple-50 p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-                        <div class="flex mb-3" aria-label="5 star rating">
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279L12 18.896l-7.416 3.917 1.48-8.279-6.064-5.828 8.332-1.151L12 .587z"/></svg>
-                        </div>
-                        <p class="text-gray-800 italic mb-4 text-sm md:text-base">"The shoe laundry service is a game-changer! My sneakers look brand new. I appreciate their attention to detail and quick turnaround time."</p>
-                        <p class="font-semibold text-hanpurple-700 text-sm md:text-base">- Anjali Singh</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Reviews Section -->
+  <section class="reviews section" id="reviews" aria-label="Customer Reviews">
+    <div class="container">
+      <h2 class="section__title accent-font">Customer Reviews</h2>
+      <div class="reviews__grid">
+        <blockquote class="review-card" tabindex="0">
+          <p>
+            "Love the service they are prompt and the quality of the work they do is also good."
+          </p>
+          <cite>– Pratik Bhangale</cite>
+        </blockquote>
 
-        <section id="timings" class="py-12 md:py-16 bg-gray-100 rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6" aria-labelledby="timings-title">
-            <div class="container mx-auto px-4">
-                <h2 id="timings-title" class="text-2xl sm:text-3xl font-bold text-gray-900 section-title">Shop Timings</h2>
-                <div class="bg-hanpurple-50 p-6 rounded-lg shadow-inner">
-                    <ul class="text-base md:text-lg text-gray-700 space-y-3" aria-label="Shop opening hours">
-                        <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center py-2 border-b border-hanpurple-200 last:border-b-0">
-                            <span class="font-semibold text-hanpurple-700 w-full sm:w-auto mb-1 sm:mb-0">Monday - Sunday :</span>
-                            <span class="w-full sm:w-auto text-right sm:text-left">09:00 AM - 09:00 PM</span>
-                        </li>
-                        <li class="flex flex-col sm:flex-row justify-between items-start sm:items-center py-2 last:border-b-0">
-                            <span class="font-semibold text-hanpurple-700 w-full sm:w-auto mb-1 sm:mb-0">Thursday :</span>
-                            <span class="text-red-600 font-bold w-full sm:w-auto text-right sm:text-left">Closed</span>
-                        </li>
-                    </ul>
-                    <p class="mt-6 text-sm md:text-md text-gray-600 italic">
-                        *Please note: Holiday hours may vary. Kindly call ahead for confirmation.
-                    </p>
-                </div>
-            </div>
-        </section>
+                <blockquote class="review-card" tabindex="0">
+          <p>
+            "Affordable and Fast Service."
+          </p>
+          <cite>– Kunal Chavan</cite>
+        </blockquote>
 
-        <section id="contact" class="py-12 md:py-16 bg-gray-100 rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6" aria-labelledby="contact-title">
-            <div class="container mx-auto px-4">
-                <h2 id="contact-title" class="text-2xl sm:text-3xl font-bold text-gray-900 section-title">Contact Us</h2>
-                <div class="flex justify-center"> <!-- Centering the single contact info block -->
-                    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md" aria-labelledby="get-in-touch-title"> <!-- Added max-w-md for better single column appearance -->
-                        <h3 id="get-in-touch-title" class="text-xl font-semibold text-hanpurple-600 mb-4">Get in Touch</h3>
-                        <p class="text-gray-700 mb-3 flex items-center text-sm md:text-base">
-                            <svg class="w-5 h-5 mr-2 text-hanpurple-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM9 9a1 1 0 112 0v4a1 1 0 11-2 0V9zm0-3a1 1 0 112 0 1 1 0 01-2 0z" clip-rule="evenodd"></path></svg>
-                            <strong>Phone:</strong> <a href="tel:+918983552515" class="ml-2 text-hanpurple-600 hover:underline focus:outline-none focus:ring-2 focus:ring-hanpurple-500">+91 8983552515</a>
-                        </p>
-                        <p class="text-gray-700 mb-3 flex items-center text-sm md:text-base">
-                            <svg class="w-5 h-5 mr-2 text-hanpurple-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                            <strong>Email:</strong> <a href="mailto:tarun.katta66@gmail.com" class="ml-2 text-hanpurple-600 hover:underline focus:outline-none focus:ring-2 focus:ring-hanpurple-500">tarun.katta66@gmail.com</a>
-                        </p>
-                        <p class="text-gray-700 mb-3 flex items-start text-sm md:text-base">
-                            <svg class="w-5 h-5 mr-2 text-hanpurple-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
-                            <strong>Address:</strong> <span class="ml-2">Nyati Estate, Shop No 5, Near Nyati Estate, Mohamadwadi, Pune-411060</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <blockquote class="review-card" tabindex="0">
+          <p>
+            "Good packing & best quality / service 👍 …"
+          </p>
+          <cite>– Santosh Bidave</cite>
+        </blockquote>
 
-        <!-- Location Section -->
-        <section id="location" class="py-12 md:py-16 bg-white rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6" aria-labelledby="location-title">
-            <div class="container mx-auto px-4">
-                <h2 id="location-title" class="text-2xl sm:text-3xl font-bold text-gray-900 section-title">Our Location</h2>
-                <div class="bg-hanpurple-50 p-6 rounded-lg shadow-inner">
-                    <p class="text-base md:text-lg text-gray-700 mb-4">Visit us at our convenient location:</p>
-                    <address class="text-lg md:text-xl font-semibold text-hanpurple-700 not-italic mb-6">
-                        Nyati Estate, Shop No 5, Near Nyati Estate, Mohamadwadi, Pune-411060
-                    </address>
-                    <!-- Google Map Embed - Updated with correct embed and direct link -->
-                    <a href="https://www.google.com/maps/search/?api=1&query=Expert+Dry+Cleaners+Nyati+Estate,+Shop+No+5,+Near+Nyati+Estate,+Mohamadwadi,+Pune-411060" target="_blank" rel="noopener noreferrer" class="block w-full h-64 md:h-96 bg-gray-200 rounded-lg overflow-hidden shadow-md group relative" aria-label="View our location on Google Maps">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.388722424508!2d73.91840077388538!3d18.466043382616988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2eb8ac64b525b%3A0x617f9c55d79c032!2sExpert%20Dry%20Cleaners!5e0!3m2!1sen!2sin!4v1753002627830!5m2!1sen!2sin"
-                            width="100%"
-                            height="100%"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Expert Dry Cleaners Location on Google Maps">
-                        </iframe>
-                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 text-white text-base md:text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-                            Click to view on Google Maps
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <blockquote class="review-card" tabindex="0">
+          <p>
+            "Best quality for dry clean and daily clothes ironing."
+          </p>
+          <cite>– Tanmay Ghule</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
 
-        <!-- Shop Photos / Gallery Section -->
-        <section id="gallery" class="py-12 md:py-16 bg-gray-100 rounded-lg shadow-md mx-4 md:mx-auto max-w-6xl mt-8 p-6 mb-8" aria-labelledby="gallery-title">
-            <div class="container mx-auto px-4">
-                <h2 id="gallery-title" class="text-2xl sm:text-3xl font-bold text-gray-900 section-title">Shop Gallery</h2>
-                <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                    <!-- Photo 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://images.jdmagicbox.com/comp/pune/x5/020pxx20.xx20.220611112045.j5x5/catalogue/-rh2tfdnb30-250.jpg"
-                             alt="A well-lit and welcoming reception area of Expert Dry Cleaners, showcasing cleanliness and organization."
-                             class="w-full h-40 sm:h-48 object-cover transition duration-300 transform hover:scale-105"
-                             loading="lazy"
-                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
-                        <div class="p-3 sm:p-4">
-                            <p class="text-gray-700 text-xs sm:text-sm">Our welcoming reception area.</p>
-                        </div>
-                    </div>
-                    <!-- Photo 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://images.jdmagicbox.com/comp/pune/h3/020pxx20.xx20.180317120613.k9h3/catalogue/expert-dry-cleaners-mohamadwadi-pune-laundry-services-for-restaurant-hvi6iz5tqd-250.jpg"
-                             alt="Advanced dry cleaning machinery and equipment in action, demonstrating the modern technology used for garment care."
-                             class="w-full h-40 sm:h-48 object-cover transition duration-300 transform hover:scale-105"
-                             loading="lazy"
-                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
-                        <div class="p-3 sm:p-4">
-                            <p class="text-gray-700 text-xs sm:text-sm">State-of-the-art cleaning machinery.</p>
-                        </div>
-                    </div>
-                    <!-- Photo 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://images.jdmagicbox.com/comp/pune/h3/020pxx20.xx20.180317120613.k9h3/catalogue/expert-dry-cleaners-mohamadwadi-pune-laundry-services-for-restaurant-sdrcp1zw9m-250.jpg"
-                             alt="A close-up of a skilled team member meticulously inspecting a garment, highlighting the attention to detail in our cleaning process."
-                             class="w-full h-40 sm:h-48 object-cover transition duration-300 transform hover:scale-105"
-                             loading="lazy"
-                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
-                        <div class="p-3 sm:p-4">
-                            <p class="text-gray-700 text-xs sm:text-sm">Our team meticulously inspecting garments.</p>
-                        </div>
-                    </div>
-                    <!-- Photo 4 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://images.jdmagicbox.com/comp/pune/h3/020pxx20.xx20.180317120613.k9h3/catalogue/expert-dry-cleaners-pune-skteo-250.jpg"
-                             alt="A rack filled with freshly cleaned and perfectly pressed garments, ready for pickup, showcasing the quality of our service."
-                             class="w-full h-40 sm:h-48 object-cover transition duration-300 transform hover:scale-105"
-                             loading="lazy"
-                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
-                        <div class="p-3 sm:p-4">
-                            <p class="text-gray-700 text-xs sm:text-sm">Freshly cleaned and pressed garments.</p>
-                        </div>
-                    </div>
-                    <!-- Photo 5 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://images.jdmagicbox.com/v2/comp/pune/h3/020pxx20.xx20.180317120613.k9h3/catalogue/expert-dry-cleaners-mohamadwadi-pune-laundry-services-for-restaurant-235md7u6lh-250.jpg"
-                             alt="An image showing eco-friendly cleaning products or processes, emphasizing Expert Dry Cleaners' commitment to sustainability."
-                             class="w-full h-40 sm:h-48 object-cover transition duration-300 transform hover:scale-105"
-                             loading="lazy"
-                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
-                        <div class="p-3 sm:p-4">
-                            <p class="text-gray-700 text-xs sm:text-sm">Our commitment to eco-friendly practices.</p>
-                        </div>
-                    </div>
-                    <!-- Photo 6 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://images.jdmagicbox.com/comp/pune/h3/020pxx20.xx20.180317120613.k9h3/catalogue/expert-dry-cleaners-pune-skteo-250.jpg"
-                             alt="A smiling customer receiving their perfectly cleaned clothes, illustrating the high level of customer satisfaction at Expert Dry Cleaners."
-                             class="w-full h-40 sm:h-48 object-cover transition duration-300 transform hover:scale-105"
-                             loading="lazy"
-                             onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0E0E0/333333?text=Image+Not+Found';">
-                        <div class="p-3 sm:p-4">
-                            <p class="text-gray-700 text-xs sm:text-sm">Ensuring customer satisfaction.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+  <!-- Photos Section -->
+  <section class="photos section" id="photos" aria-label="Gallery of Our Work">
+    <div class="container">
+      <h2 class="section__title accent-font">Our Work</h2>
+      <div class="photos__grid">
+        <figure class="photo-card">
+          <img src="https://img.freepik.com/free-photo/multi-colored-garments-hang-coathangers-retail-store-generated-by-ai_188544-19853.jpg" alt="Professional dry cleaning process" loading="lazy"/>
+        </figure>
+        <figure class="photo-card">
+          <img src="https://black-and-white.co.in/wp-content/uploads/2024/04/what-is-dry-cleaning.jpg" alt="Delicate garment being handled by expert" loading="lazy"/>
+        </figure>
+        <figure class="photo-card">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.3BnPPkTvIK9s93dy828TWwHaEL?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Eco-friendly laundry cleaning" loading="lazy"/>
+        </figure>
+        <figure class="photo-card">
+          <img src="https://cdn.apartmenttherapy.info/image/fetch/f_auto,q_auto:eco/https://storage.googleapis.com/gen-atmedia/2/2019/04/9c804eb2ed57f3c96c17c9c4825f071011a3fbc0.jpeg" alt="Clothes hanging after cleaning" loading="lazy"/>
+        </figure>
+        <figure class="photo-card">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.B9qLSzg6enfm8J0j-2tqDAHaFj?r=0&w=600&h=450&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Close-up of garment repair and tailoring" loading="lazy"/>
+        </figure>
+        <figure class="photo-card">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.zF6biAwChdMhMx2KZ4dw5QHaDY?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Folded cleaned clothes on shelf" loading="lazy"/>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 rounded-t-lg shadow-inner" role="contentinfo">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-sm sm:text-base">&copy; 2017 Expert Dry Cleaners. All rights reserved.</p>
-            <p class="mt-2 text-xs sm:text-sm">Designed by Tarun Katta</p>
-        </div>
-    </footer>
+  <!-- Contact Section -->
+  <section class="contact section" id="contact" aria-label="Contact Information and Business Hours">
+    <div class="container contact__container">
+      <div class="contact__info">
+        <h2 class="section__title accent-font">Contact Us</h2>
+        <p><strong>Phone:</strong> <a href="tel:+918983552515" aria-label="Call phone number +91 8983552515">+91 8983552515</a></p>
+        <p><strong>Email:</strong> <a href="mailto:tarun.katta66@gmail.com" aria-label="Send email to tarun.katta66@gmail.com">tarun.katta66@gmail.com</a></p>
+        <p><strong>Address:</strong> Nyati Estate, Shop No 5, Near Nyati Estate, Mohamadwadi, Pune-411060</p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=Expert+Dry+Cleaners+Nyati+Estate,+Shop+No+5,+Near+Nyati+Estate,+Mohamadwadi,+Pune-411060" target="_blank" rel="noopener noreferrer" aria-label="View Expert Dry Cleaners location on Google Maps">View on Google Maps</a></p>
+      </div>
+      <div class="contact__hours">
+        <h2 class="section__title accent-font">Business Hours</h2>
+        <ul>
+          <li><strong>Monday - Friday:</strong> 8:00 AM - 7:00 PM</li>
+          <li><strong>Saturday:</strong> 9:00 AM - 5:00 PM</li>
+          <li><strong>Sunday:</strong> Closed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hamburger Menu Functionality
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIconPath1 = document.getElementById('menu-icon-path-1');
-            const menuIconPath2 = document.getElementById('menu-icon-path-2');
-            const menuIconPath3 = document.getElementById('menu-icon-path-3');
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div>© 2025 Expert Dry Cleaners</div>
+      <div class="footer-credit">Designed by <a href="#" rel="author noopener noreferrer">Tarun Katta</a></div>
+    </div>
+  </footer>
 
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function() {
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', !isExpanded);
-                    mobileMenu.classList.toggle('hidden');
-                    mobileMenu.classList.toggle('flex');
-                    mobileMenu.classList.toggle('absolute'); // Make it absolute for overlay effect
-                    mobileMenu.classList.toggle('top-full'); // Position it below the header
-                    mobileMenu.classList.toggle('left-0');
-                    mobileMenu.classList.toggle('bg-white'); // Give it a background
-                    mobileMenu.classList.toggle('shadow-lg'); // Add shadow
-                    mobileMenu.classList.toggle('py-4'); // Add padding
-                    mobileMenu.classList.toggle('z-40'); // Ensure it's above content but below header
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      const navLinks = document.querySelectorAll('.nav__link');
+      const header = document.getElementById('header');
 
-                    // Animate hamburger icon to 'X' and back
-                    if (isExpanded) {
-                        // Change to hamburger icon
-                        menuIconPath1.setAttribute('d', 'M4 6h16');
-                        menuIconPath2.setAttribute('d', 'M4 12h16');
-                        menuIconPath3.setAttribute('d', 'M4 18h16');
-                    } else {
-                        // Change to 'X' icon
-                        menuIconPath1.setAttribute('d', 'M6 18L18 6');
-                        menuIconPath2.setAttribute('d', 'M6 18L18 6'); // This line is not needed for a clean X, but keeping it for consistency if it was part of a complex animation
-                        menuIconPath3.setAttribute('d', 'M6 6l12 12');
-                    }
-                });
-
-                // Close mobile menu when a navigation link is clicked (for smooth scrolling)
-                mobileMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            // Only programmatically click if the menu is open
-                            mobileMenuButton.click(); // Simulate click to close menu
-                        }
-                    });
-                });
-            }
+      if (navToggle) {
+        navToggle.addEventListener('click', function () {
+          navMenu.classList.toggle('show');
         });
-    </script>
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', function () {
+          navMenu.classList.remove('show');
+        });
+      });
+
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 100) {
+          header.style.background =
+            'linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%)';
+          header.style.boxShadow = '0 6px 20px rgba(54, 49, 174, 0.25)';
+        } else {
+          header.style.background =
+            'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+          header.style.boxShadow = 'none';
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
