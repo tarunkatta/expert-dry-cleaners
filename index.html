@@ -23,7 +23,34 @@
   <meta name="twitter:description" content="Professional dry cleaning, eco-friendly cleaning, express services, and tailoring in Pune." />
   <meta name="twitter:image" content="https://www.expertdrycleaners.com/twitter-image.jpg" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Preload font for better performance -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap"></noscript>
+
+  <!-- Schema.org JSON-LD for LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DryCleaningOrLaundry",
+    "name": "Expert Dry Cleaners",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Nyati Estate, Shop No 5, Near Nyati Estate, Mohamadwadi",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "411060",
+      "addressCountry": "IN"
+    },
+    "telephone": "+918983552515",
+    "openingHours": [
+      "Mo-Fr 08:00-19:00",
+      "Sa 09:00-17:00"
+    ],
+    "url": "https://www.expertdrycleaners.com",
+    "priceRange": "$$",
+    "description": "Expert Dry Cleaners offers professional dry cleaning, eco-friendly cleaning, specialty garment care, express services, and tailoring in Pune. We are trusted for our meticulous attention to delicate fabrics and our commitment to sustainable cleaning methods."
+  }
+  </script>
 
   <style>
     :root {
@@ -65,12 +92,11 @@
       width: 90%;
       max-width: 1200px;
       margin: 0 auto;
-      /* Adjusted padding for better mobile spacing */
       padding: 0 1rem;
     }
 
     .section {
-      scroll-margin-top: 80px; /* Added to account for fixed header */
+      scroll-margin-top: 80px;
       padding-top: 5rem;
       padding-bottom: 5rem;
     }
@@ -153,7 +179,7 @@
       align-items: center;
       text-align: left;
       padding-top: 5rem;
-      padding-bottom: 0; /* Adjusted: Removed padding to eliminate the gap */
+      padding-bottom: 0;
     }
 
     .hero__container {
@@ -165,7 +191,7 @@
       font-size: 3.5rem;
       margin: 0 0 0.3rem;
       line-height: 1.1;
-      background: linear-gradient(90deg, #730af4, #1207eb);
+      background: linear-gradient(90deg, #b893ff, #8c7ae6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -218,10 +244,10 @@
     /* About Section */
     .about {
       background: linear-gradient(135deg, #e8e3f9 0%, #f6f4fe 100%);
-      padding: 0 0 6rem; /* Adjusted: Removed top padding */
+      padding: 0 0 6rem;
       border-radius: 24px;
       box-shadow: var(--shadow-light);
-      margin-top: 0; /* Adjusted: Removed margin to eliminate the gap */
+      margin-top: 0;
       color: var(--color-text-secondary);
     }
 
@@ -309,7 +335,6 @@
 
     .services__grid {
       display: grid;
-      /* Adjusted minmax to be more fluid for mobile */
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2.2rem;
       margin-top: 2rem;
@@ -383,7 +408,6 @@
 
     .reviews__grid {
       display: grid;
-      /* Adjusted minmax for better mobile responsiveness */
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
@@ -437,7 +461,6 @@
 
     .photos__grid {
       display: grid;
-      /* Adjusted grid for better mobile responsiveness */
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 1.5rem;
       max-width: 1200px;
@@ -451,8 +474,7 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.35);
       cursor: pointer;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
-      /* Enforce a consistent aspect ratio */
-      padding-top: 66.66%; /* 3:2 Aspect Ratio (2/3 = 0.6666...) */
+      padding-top: 66.66%;
     }
 
     .photo-card::before {
@@ -471,7 +493,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* This is key for fixing the image aspect ratio */
+        object-fit: cover;
         display: block;
         transition: transform 0.4s ease;
     }
@@ -596,7 +618,6 @@
 
     /* Responsive */
     @media only screen and (max-width: 768px) {
-      /* Adjusted spacing for smaller screens */
       body {
         padding: 0;
       }
@@ -607,14 +628,12 @@
       .section {
         padding: 3rem 1rem;
       }
-      /* About section fix */
       .about__container {
         flex-direction: column-reverse;
         text-align: center;
       }
       .about__text,
       .about__image-container {
-        /* This is the key fix to override the fixed flex-basis on desktop */
         flex: 1 1 100%;
         max-width: 100%;
       }
@@ -673,183 +692,185 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home" aria-label="Hero Introduction">
-    <div class="hero__container container">
-      <div class="hero__content">
-        <h1 class="hero__title">Expert Dry Cleaners</h1>
-        <h2 class="hero__subtitle">Premium Fabric Care</h2>
-        <p class="hero__desc">
-          Professional dry cleaning services with expert care for your garments.
-        </p>
-        <a href="#contact" class="btn btn--gradient">Book Now</a>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home" aria-label="Hero Introduction">
+      <div class="hero__container container">
+        <div class="hero__content">
+          <h1 class="hero__title">Expert Dry Cleaners</h1>
+          <h2 class="hero__subtitle">Premium Fabric Care</h2>
+          <p class="hero__desc">
+            Professional dry cleaning services with expert care for your garments.
+          </p>
+          <a href="#contact" class="btn btn--gradient">Book Now</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Section -->
-  <section class="about section" id="about" aria-label="About Expert Dry Cleaners">
-    <div class="container about__container">
-      <div class="about__text">
-        <h2 class="section__title accent-font text-center">About Us</h2>
-        <p>
-          Expert Dry Cleaners is your trusted name for professional fabric care.
-          We specialize in handling delicate fabrics and garments with expert
-          attention to detail. Our eco-friendly cleaning methods ensure your
-          clothes are not only spotless but also safe for the environment.
-        </p>
-        <p>
-          With years of experience, our team expertly removes tough stains,
-          restores colors, and handles specialty garments like wedding dresses,
-          leather, and suede. We pride ourselves on authenticity, sustainability,
-          and premium quality service.
-        </p>
-      </div>
-      <figure class="about__image-container" aria-hidden="true">
-        <img
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-          alt="Professional dry cleaner handling delicate fabric"
-          class="about__image"
-          loading="lazy"
-        />
-      </figure>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="services section" id="services" aria-label="Our Dry Cleaning Services">
-    <div class="container">
-      <h2 class="section__title accent-font text-center">Our Services</h2>
-      <div class="services__grid">
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">👔</div>
-          <h3>Standard Dry Cleaning</h3>
+    <!-- About Section -->
+    <section class="about section" id="about" aria-label="About Expert Dry Cleaners">
+      <div class="container about__container">
+        <div class="about__text">
+          <h2 class="section__title accent-font text-center">About Us</h2>
           <p>
-            Professional cleaning for formal wear and delicate fabrics using
-            specialized solvents.
+            Expert Dry Cleaners is your trusted name for professional fabric care.
+            We specialize in handling delicate fabrics and garments with expert
+            attention to detail. Our eco-friendly cleaning methods ensure your
+            clothes are not only spotless but also safe for the environment.
           </p>
-        </article>
-
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">🌿</div>
-          <h3>Eco-Friendly Cleaning</h3>
           <p>
-            Sustainable cleaning methods with biodegradable solvents and
-            eco-conscious processes.
+            With years of experience, our team expertly removes tough stains,
+            restores colors, and handles specialty garments like wedding dresses,
+            leather, and suede. We pride ourselves on authenticity, sustainability,
+            and premium quality service.
           </p>
-        </article>
-
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">👗</div>
-          <h3>Specialty Garment Care</h3>
-          <p>
-            Expert care for wedding dresses, leather, suede, and luxury fabrics.
-          </p>
-        </article>
-
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">⚡</div>
-          <h3>Express Service</h3>
-          <p>Same-day cleaning service for urgent needs and last-minute events.</p>
-        </article>
-
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">👕</div>
-          <h3>Laundry Services</h3>
-          <p>Professional wash and fold services for everyday garments.</p>
-        </article>
-
-        <article class="service-card" tabindex="0">
-          <div class="service-icon">✂️</div>
-          <h3>Repairs & Alterations</h3>
-          <p>Professional tailoring including hemming, alterations, and repairs.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reviews Section -->
-  <section class="reviews section" id="reviews" aria-label="Customer Reviews">
-    <div class="container">
-      <h2 class="section__title accent-font text-center">Customer Reviews</h2>
-      <div class="reviews__grid">
-        <blockquote class="review-card" tabindex="0">
-          <p>
-            "Love the service they are prompt and the quality of the work they do is also good."
-          </p>
-          <cite>– Pratik Bhangale</cite>
-        </blockquote>
-
-                <blockquote class="review-card" tabindex="0">
-          <p>
-            "Affordable and Fast Service."
-          </p>
-          <cite>– Kunal Chavan</cite>
-        </blockquote>
-
-        <blockquote class="review-card" tabindex="0">
-          <p>
-            "Good packing & best quality / service 👍 …"
-          </p>
-          <cite>– Santosh Bidave</cite>
-        </blockquote>
-
-        <blockquote class="review-card" tabindex="0">
-          <p>
-            "Best quality for dry clean and daily clothes ironing."
-          </p>
-          <cite>– Tanmay Ghule</cite>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- Photos Section -->
-  <section class="photos section" id="photos" aria-label="Gallery of Our Work">
-    <div class="container">
-      <h2 class="section__title accent-font text-center">Our Work</h2>
-      <div class="photos__grid">
-        <figure class="photo-card">
-          <img src="https://img.freepik.com/free-photo/multi-colored-garments-hang-coathangers-retail-store-generated-by-ai_188544-19853.jpg" alt="Professional dry cleaning process" loading="lazy"/>
-        </figure>
-        <figure class="photo-card">
-          <img src="https://black-and-white.co.in/wp-content/uploads/2024/04/what-is-dry-cleaning.jpg" alt="Delicate garment being handled by expert" loading="lazy"/>
-        </figure>
-        <figure class="photo-card">
-          <img src="https://tse4.mm.bing.net/th/id/OIP.3BnPPkTvIK9s93dy828TWwHaEL?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Eco-friendly laundry cleaning" loading="lazy"/>
-        </figure>
-        <figure class="photo-card">
-          <img src="https://cdn.apartmenttherapy.info/image/fetch/f_auto,q_auto:eco/https://storage.googleapis.com/gen-atmedia/2/2019/04/9c804eb2ed57f3c96c17c9c4825f071011a3fbc0.jpeg" alt="Clothes hanging after cleaning" loading="lazy"/>
-        </figure>
-        <figure class="photo-card">
-          <img src="https://tse3.mm.bing.net/th/id/OIP.B9qLSzg6enfm8J0j-2tqDAHaFj?r=0&w=600&h=450&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Close-up of garment repair and tailoring" loading="lazy"/>
-        </figure>
-        <figure class="photo-card">
-          <img src="https://tse3.mm.bing.net/th/id/OIP.zF6biAwChdMhMx2KZ4dw5QHaDY?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Folded cleaned clothes on shelf" loading="lazy"/>
+        </div>
+        <figure class="about__image-container" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+            alt="Professional dry cleaner handling delicate fabric"
+            class="about__image"
+            loading="lazy"
+          />
         </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section class="contact section" id="contact" aria-label="Contact Information and Business Hours">
-    <div class="container contact__container">
-      <div class="contact__info">
-        <h2 class="section__title accent-font text-center">Contact Us</h2>
-        <p><strong>Phone:</strong> <a href="tel:+918983552515" aria-label="Call phone number +91 8983552515">+91 8983552515</a></p>
-        <p><strong>Email:</strong> <a href="mailto:tarun.katta66@gmail.com" aria-label="Send email to tarun.katta66@gmail.com">tarun.katta66@gmail.com</a></p>
-        <p><strong>Address:</strong> Nyati Estate, Shop No 5, Near Nyati Estate, Mohamadwadi, Pune-411060</p>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=Expert+Dry+Cleaners+Nyati+Estate,+Shop+No 5,+Near+Nyati+Estate,+Mohamadwadi,+Pune-411060" target="_blank" rel="noopener noreferrer" aria-label="View Expert Dry Cleaners location on Google Maps">View on Google Maps</a></p>
+    <!-- Services Section -->
+    <section class="services section" id="services" aria-label="Our Dry Cleaning Services">
+      <div class="container">
+        <h2 class="section__title accent-font text-center">Our Services</h2>
+        <div class="services__grid">
+          <article class="service-card" tabindex="0">
+            <div class="service-icon">👔</div>
+            <h3>Standard Dry Cleaning</h3>
+            <p>
+              Professional cleaning for formal wear and delicate fabrics using
+              specialized solvents.
+            </p>
+          </article>
+
+          <article class="service-card" tabindex="0">
+            <div class="service-icon">🌿</div>
+            <h3>Eco-Friendly Cleaning</h3>
+            <p>
+              Sustainable cleaning methods with biodegradable solvents and
+              eco-conscious processes.
+            </p>
+          </article>
+
+          <article class="service-card" tabindex="0">
+            <div class="service-icon">👗</div>
+            <h3>Specialty Garment Care</h3>
+            <p>
+              Expert care for wedding dresses, leather, suede, and luxury fabrics.
+            </p>
+          </article>
+
+          <article class="service-card" tabindex="0">
+            <div class="service-icon">⚡</div>
+            <h3>Express Service</h3>
+            <p>Same-day cleaning service for urgent needs and last-minute events.</p>
+          </article>
+
+          <article class="service-card" tabindex="0">
+            <div class="service-icon">👕</div>
+            <h3>Laundry Services</h3>
+            <p>Professional wash and fold services for everyday garments.</p>
+          </article>
+
+          <article class="service-card" tabindex="0">
+            <div class="service-icon">✂️</div>
+            <h3>Repairs & Alterations</h3>
+            <p>Professional tailoring including hemming, alterations, and repairs.</p>
+          </article>
+        </div>
       </div>
-      <div class="contact__hours">
-        <h2 class="section__title accent-font text-center">Business Hours</h2>
-        <ul>
-          <li><strong>Monday -Sunday:</strong> 9:00 AM - 9:00 PM</li>
-          <li><strong>Thursday:</strong> Closed</li>
-        </ul>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews section" id="reviews" aria-label="Customer Reviews">
+      <div class="container">
+        <h2 class="section__title accent-font text-center">Customer Reviews</h2>
+        <div class="reviews__grid">
+          <blockquote class="review-card" tabindex="0">
+            <p>
+              "Love the service they are prompt and the quality of the work they do is also good."
+            </p>
+            <cite>– Pratik Bhangale</cite>
+          </blockquote>
+
+                  <blockquote class="review-card" tabindex="0">
+            <p>
+              "Affordable and Fast Service."
+            </p>
+            <cite>– Kunal Chavan</cite>
+          </blockquote>
+
+          <blockquote class="review-card" tabindex="0">
+            <p>
+              "Good packing & best quality / service 👍 …"
+            </p>
+            <cite>– Santosh Bidave</cite>
+          </blockquote>
+
+          <blockquote class="review-card" tabindex="0">
+            <p>
+              "Best quality for dry clean and daily clothes ironing."
+            </p>
+            <cite>– Tanmay Ghule</cite>
+          </blockquote>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Photos Section -->
+    <section class="photos section" id="photos" aria-label="Gallery of Our Work">
+      <div class="container">
+        <h2 class="section__title accent-font text-center">Our Work</h2>
+        <div class="photos__grid">
+          <figure class="photo-card">
+            <img src="https://img.freepik.com/free-photo/multi-colored-garments-hang-coathangers-retail-store-generated-by-ai_188544-19853.jpg" alt="Professional dry cleaning process" loading="lazy"/>
+          </figure>
+          <figure class="photo-card">
+            <img src="https://black-and-white.co.in/wp-content/uploads/2024/04/what-is-dry-cleaning.jpg" alt="Delicate garment being handled by expert" loading="lazy"/>
+          </figure>
+          <figure class="photo-card">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.3BnPPkTvIK9s93dy828TWwHaEL?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Eco-friendly laundry cleaning" loading="lazy"/>
+          </figure>
+          <figure class="photo-card">
+            <img src="https://cdn.apartmenttherapy.info/image/fetch/f_auto,q_auto:eco/https://storage.googleapis.com/gen-atmedia/2/2019/04/9c804eb2ed57f3c96c17c9c4825f071011a3fbc0.jpeg" alt="Clothes hanging after cleaning" loading="lazy"/>
+          </figure>
+          <figure class="photo-card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.B9qLSzg6enfm8J0j-2tqDAHaFj?r=0&w=600&h=450&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Close-up of garment repair and tailoring" loading="lazy"/>
+          </figure>
+          <figure class="photo-card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.zF6biAwChdMhMx2KZ4dw5QHaDY?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Folded cleaned clothes on shelf" loading="lazy"/>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact" aria-label="Contact Information and Business Hours">
+      <div class="container contact__container">
+        <div class="contact__info">
+          <h2 class="section__title accent-font text-center">Contact Us</h2>
+          <p><strong>Phone:</strong> <a href="tel:+918983552515" aria-label="Call phone number +91 8983552515">+91 8983552515</a></p>
+          <p><strong>Email:</strong> <a href="mailto:tarun.katta66@gmail.com" aria-label="Send email to tarun.katta66@gmail.com">tarun.katta66@gmail.com</a></p>
+          <p><strong>Address:</strong> Nyati Estate, Shop No 5, Near Nyati Estate, Mohamadwadi, Pune-411060</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Expert+Dry+Cleaners+Nyati+Estate,+Shop+No 5,+Near+Nyati+Estate,+Mohamadwadi,+Pune-411060" target="_blank" rel="noopener noreferrer" aria-label="View Expert Dry Cleaners location on Google Maps">View on Google Maps</a></p>
+        </div>
+        <div class="contact__hours">
+          <h2 class="section__title accent-font text-center">Business Hours</h2>
+          <ul>
+            <li><strong>Monday - Sunday:</strong> 9:00 AM - 9:00 PM</li>
+            <li><strong>Thursday:</strong> Closed</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
