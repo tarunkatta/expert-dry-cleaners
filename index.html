@@ -73,6 +73,11 @@
       --color-gradient-alt-end: #6a11cb;
     }
 
+    /* CRITICAL MOBILE FIX: Prevent horizontal scrolling */
+    html, body {
+        overflow-x: hidden;
+    }
+
     *,
     *::before,
     *::after {
@@ -116,7 +121,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.8rem 0;
+      padding: 1rem 0; 
     }
 
     .nav__logo h1 {
@@ -168,7 +173,20 @@
       height: 3px;
       background-color: white;
       border-radius: 3px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
+    
+    /* Toggle animation for hamburger icon */
+    .nav__toggle.active span:nth-child(1) {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+    .nav__toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav__toggle.active span:nth-child(3) {
+        transform: translateY(-9.5px) rotate(-45deg);
+    }
+
 
     /* Hero Section */
     .hero {
@@ -178,7 +196,7 @@
       display: flex;
       align-items: center;
       text-align: left;
-      padding-top: 5rem;
+      padding-top: 6rem; 
       padding-bottom: 0;
     }
 
@@ -325,7 +343,7 @@
 
     /* Services Section */
     .services {
-      padding: 8rem 4rem 7rem;
+      padding: 8rem 0 7rem; 
       background: linear-gradient(135deg, #7c70f0, #a28cfd);
       border-radius: 24px;
       box-shadow: 0 8px 32px rgba(109, 101, 255, 0.12);
@@ -616,18 +634,94 @@
       outline: none;
     }
 
-    /* Responsive */
+    /* Responsive - MOBILE OPTIMIZATION IMPROVEMENTS */
     @media only screen and (max-width: 768px) {
-      body {
-        padding: 0;
-      }
+      /* General Mobile Spacing */
       .container {
         width: 100%;
-        padding: 0 1rem;
+        padding: 0 1.5rem; /* Increased horizontal padding for all sections on mobile */
       }
       .section {
-        padding: 3rem 1rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
       }
+      
+      /* Header & Nav Mobile Fixes */
+      .nav {
+        padding: 0.8rem 1.5rem;
+      }
+      .nav__logo h1 {
+        font-size: 1.5rem;
+      }
+      
+      .nav__menu {
+        flex-direction: column;
+        position: fixed;
+        top: 62px; 
+        right: -100vw; /* Use 100vw to ensure it's completely off-screen */
+        background: var(--color-gradient-start);
+        width: 100vw;
+        height: calc(100vh - 62px); 
+        transition: right 0.3s ease;
+        padding: 2rem 0;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+        z-index: 990; 
+        /* ADDED: Use flex for centering links */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .nav__menu.show {
+        right: 0;
+      }
+      .nav__toggle {
+        display: flex;
+        /* ADDED: Ensure toggle is above the menu when open */
+        z-index: 1000; 
+      }
+      .nav__list {
+        flex-direction: column;
+        align-items: center; 
+        gap: 0;
+        margin-top: 1rem;
+        width: 100%;
+      }
+      .nav__item {
+          width: 80%;
+          text-align: center;
+          margin-bottom: 0.5rem;
+      }
+      .nav__link {
+          display: block;
+          padding: 1rem;
+          border-radius: var(--radius);
+          font-size: 1.1rem;
+          width: 100%;
+      }
+      
+      /* Hero Section */
+      .hero {
+        height: auto; 
+        padding-top: 62px; 
+        padding-bottom: 3rem;
+        text-align: center;
+      }
+      .hero__container {
+          padding-top: 2rem;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+      }
+      .hero__title {
+        font-size: 2.5rem;
+      }
+      .hero__subtitle {
+        font-size: 1.4rem;
+      }
+      .hero__desc {
+        font-size: 1rem;
+      }
+      
+      /* About Section */
       .about__container {
         flex-direction: column-reverse;
         text-align: center;
@@ -640,28 +734,44 @@
       .about__image-container {
         margin: 0 auto 2rem auto;
       }
-      .nav__menu {
-        flex-direction: column;
-        position: fixed;
-        top: 65px;
-        right: -100%;
-        background: var(--color-gradient-start);
-        width: 75vw;
-        height: 100vh;
-        transition: right 0.3s ease;
-        border-radius: 0 0 0 var(--radius);
+      
+      /* Services Section: Tighter Mobile Grid */
+      .services {
+          padding: 4rem 0 4rem; 
       }
-      .nav__menu.show {
-        right: 0;
+      .services__grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 1.5rem;
       }
-      .nav__toggle {
-        display: flex;
+      .service-card {
+          padding: 1.2rem;
+      }
+      
+      /* Contact Section: Stacking columns */
+      .contact__container {
+          flex-direction: column;
+          gap: 1.5rem;
+      }
+      .contact__info,
+      .contact__hours {
+          flex: 1 1 100%;
+          padding: 1.5rem;
       }
     }
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 480px) {
       .hero__title {
-        font-size: 2.7rem;
+        font-size: 2.2rem;
+      }
+      .section__title {
+          font-size: 2rem;
+      }
+      /* Ensure buttons are full-width on narrowest screens */
+      .btn {
+          width: 100%;
+          max-width: 300px;
+          margin: 0 auto;
+          display: block;
       }
     }
   </style>
@@ -896,15 +1006,28 @@
       const navLinks = document.querySelectorAll('.nav__link');
       const header = document.getElementById('header');
 
-      if (navToggle) {
-        navToggle.addEventListener('click', function () {
+      // Function to toggle the menu and the hamburger icon state
+      function toggleMenu() {
           navMenu.classList.toggle('show');
+          navToggle.classList.toggle('active');
+      }
+
+      if (navToggle) {
+        navToggle.addEventListener('click', toggleMenu);
+        // Also handle keyboard activation for accessibility
+        navToggle.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMenu();
+            }
         });
       }
 
       navLinks.forEach((link) => {
         link.addEventListener('click', function () {
+          // Close the menu and remove active state after clicking a link
           navMenu.classList.remove('show');
+          navToggle.classList.remove('active');
         });
       });
 
