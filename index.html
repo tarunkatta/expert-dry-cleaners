@@ -8,26 +8,21 @@
   <meta name="keywords" content="dry cleaning Pune, eco-friendly dry cleaning, wedding dress cleaning, professional laundry services, fabric care, express dry cleaning, garment repair Pune" />
   <meta name="author" content="Tarun Katta" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.expertdrycleaners.com/" />
-
-  <!-- Open Graph / Facebook -->
+  <link rel="canonical" href="https://expert-dry-cleaners.vercel.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Expert Dry Cleaners | Premium Eco-Friendly Fabric Care in Pune" />
   <meta property="og:description" content="Trusted professional dry cleaning and garment care services in Pune. Offering eco-friendly methods, express service, and repairs." />
   <meta property="og:url" content="https://www.expertdrycleaners.com/" />
   <meta property="og:image" content="https://www.expertdrycleaners.com/og-image.jpg" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Expert Dry Cleaners | Premium Eco-Friendly Fabric Care in Pune" />
   <meta name="twitter:description" content="Professional dry cleaning, eco-friendly cleaning, express services, and tailoring in Pune." />
   <meta name="twitter:image" content="https://www.expertdrycleaners.com/twitter-image.jpg" />
 
-  <!-- Preload font for better performance -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500;600&display=swap"></noscript>
 
-  <!-- Schema.org JSON-LD for LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,7 +41,7 @@
       "Mo-Fr 08:00-19:00",
       "Sa 09:00-17:00"
     ],
-    "url": "https://www.expertdrycleaners.com",
+    "url": "https://expert-dry-cleaners.vercel.app/",
     "priceRange": "$$",
     "description": "Expert Dry Cleaners offers professional dry cleaning, eco-friendly cleaning, specialty garment care, express services, and tailoring in Pune. We are trusted for our meticulous attention to delicate fabrics and our commitment to sustainable cleaning methods."
   }
@@ -71,11 +66,6 @@
       --color-gradient-alt-start: #6a11cb;
       --color-gradient-alt-mid: #2575fc;
       --color-gradient-alt-end: #6a11cb;
-    }
-
-    /* CRITICAL MOBILE FIX: Prevent horizontal scrolling */
-    html, body {
-        overflow-x: hidden;
     }
 
     *,
@@ -121,7 +111,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 0; 
+      padding: 0.8rem 0;
     }
 
     .nav__logo h1 {
@@ -173,20 +163,7 @@
       height: 3px;
       background-color: white;
       border-radius: 3px;
-      transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    
-    /* Toggle animation for hamburger icon */
-    .nav__toggle.active span:nth-child(1) {
-        transform: translateY(9.5px) rotate(45deg);
-    }
-    .nav__toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .nav__toggle.active span:nth-child(3) {
-        transform: translateY(-9.5px) rotate(-45deg);
-    }
-
 
     /* Hero Section */
     .hero {
@@ -196,7 +173,7 @@
       display: flex;
       align-items: center;
       text-align: left;
-      padding-top: 6rem; 
+      padding-top: 5rem;
       padding-bottom: 0;
     }
 
@@ -343,7 +320,7 @@
 
     /* Services Section */
     .services {
-      padding: 8rem 0 7rem; 
+      padding: 8rem 4rem 7rem;
       background: linear-gradient(135deg, #7c70f0, #a28cfd);
       border-radius: 24px;
       box-shadow: 0 8px 32px rgba(109, 101, 255, 0.12);
@@ -634,94 +611,18 @@
       outline: none;
     }
 
-    /* Responsive - MOBILE OPTIMIZATION IMPROVEMENTS */
+    /* Responsive */
     @media only screen and (max-width: 768px) {
-      /* General Mobile Spacing */
+      body {
+        padding: 0;
+      }
       .container {
         width: 100%;
-        padding: 0 1.5rem; /* Increased horizontal padding for all sections on mobile */
+        padding: 0 1rem;
       }
       .section {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding: 3rem 1rem;
       }
-      
-      /* Header & Nav Mobile Fixes */
-      .nav {
-        padding: 0.8rem 1.5rem;
-      }
-      .nav__logo h1 {
-        font-size: 1.5rem;
-      }
-      
-      .nav__menu {
-        flex-direction: column;
-        position: fixed;
-        top: 62px; 
-        right: -100vw; /* Use 100vw to ensure it's completely off-screen */
-        background: var(--color-gradient-start);
-        width: 100vw;
-        height: calc(100vh - 62px); 
-        transition: right 0.3s ease;
-        padding: 2rem 0;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.3);
-        z-index: 990; 
-        /* ADDED: Use flex for centering links */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .nav__menu.show {
-        right: 0;
-      }
-      .nav__toggle {
-        display: flex;
-        /* ADDED: Ensure toggle is above the menu when open */
-        z-index: 1000; 
-      }
-      .nav__list {
-        flex-direction: column;
-        align-items: center; 
-        gap: 0;
-        margin-top: 1rem;
-        width: 100%;
-      }
-      .nav__item {
-          width: 80%;
-          text-align: center;
-          margin-bottom: 0.5rem;
-      }
-      .nav__link {
-          display: block;
-          padding: 1rem;
-          border-radius: var(--radius);
-          font-size: 1.1rem;
-          width: 100%;
-      }
-      
-      /* Hero Section */
-      .hero {
-        height: auto; 
-        padding-top: 62px; 
-        padding-bottom: 3rem;
-        text-align: center;
-      }
-      .hero__container {
-          padding-top: 2rem;
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-      }
-      .hero__title {
-        font-size: 2.5rem;
-      }
-      .hero__subtitle {
-        font-size: 1.4rem;
-      }
-      .hero__desc {
-        font-size: 1rem;
-      }
-      
-      /* About Section */
       .about__container {
         flex-direction: column-reverse;
         text-align: center;
@@ -734,48 +635,45 @@
       .about__image-container {
         margin: 0 auto 2rem auto;
       }
-      
-      /* Services Section: Tighter Mobile Grid */
-      .services {
-          padding: 4rem 0 4rem; 
+      .nav__menu {
+        flex-direction: column;
+        position: fixed;
+        top: 65px;
+        right: -100%;
+        background: var(--color-gradient-start);
+        width: 75vw;
+        height: calc(100vh - 65px);
+        transition: right 0.3s ease;
+        border-radius: 0 0 0 var(--radius);
+        overflow-y: auto;
       }
-      .services__grid {
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-          gap: 1.5rem;
+      .nav__menu.show {
+        right: 0;
       }
-      .service-card {
-          padding: 1.2rem;
+      .nav__toggle {
+        display: flex;
       }
-      
-      /* Contact Section: Stacking columns */
-      .contact__container {
-          flex-direction: column;
-          gap: 1.5rem;
+      /* NEW CSS FOR VERTICAL MENU ITEMS */
+      .nav__list {
+        flex-direction: column; /* Stack list items vertically */
+        align-items: center;    /* Center items horizontally within the menu */
+        padding-top: 2rem;      /* Add some spacing from the top of the menu */
       }
-      .contact__info,
-      .contact__hours {
-          flex: 1 1 100%;
-          padding: 1.5rem;
+      .nav__item {
+        margin-bottom: 1.5rem;  /* Add vertical spacing between menu items */
+      }
+      .nav__link {
+        font-size: 1.3rem;      /* Make text larger for mobile */
+        padding: 0.8rem 1.5rem; /* Adjust padding for touch targets */
       }
     }
 
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 400px) {
       .hero__title {
-        font-size: 2.2rem;
-      }
-      .section__title {
-          font-size: 2rem;
-      }
-      /* Ensure buttons are full-width on narrowest screens */
-      .btn {
-          width: 100%;
-          max-width: 300px;
-          margin: 0 auto;
-          display: block;
+        font-size: 2.7rem;
       }
     }
   </style>
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q8KFVS66WM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -786,7 +684,6 @@
   </script>
 </head>
 <body>
-  <!-- Header -->
   <header class="header" id="header">
     <nav class="nav container" role="navigation" aria-label="Main navigation">
       <div class="nav__logo">
@@ -812,7 +709,6 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
     <section class="hero" id="home" aria-label="Hero Introduction">
       <div class="hero__container container">
         <div class="hero__content">
@@ -826,7 +722,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
     <section class="about section" id="about" aria-label="About Expert Dry Cleaners">
       <div class="container about__container">
         <div class="about__text">
@@ -855,7 +750,6 @@
       </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services section" id="services" aria-label="Our Dry Cleaning Services">
       <div class="container">
         <h2 class="section__title accent-font text-center">Our Services</h2>
@@ -907,7 +801,6 @@
       </div>
     </section>
 
-    <!-- Reviews Section -->
     <section class="reviews section" id="reviews" aria-label="Customer Reviews">
       <div class="container">
         <h2 class="section__title accent-font text-center">Customer Reviews</h2>
@@ -943,7 +836,6 @@
       </div>
     </section>
 
-    <!-- Photos Section -->
     <section class="photos section" id="photos" aria-label="Gallery of Our Work">
       <div class="container">
         <h2 class="section__title accent-font text-center">Our Work</h2>
@@ -970,7 +862,6 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact section" id="contact" aria-label="Contact Information and Business Hours">
       <div class="container contact__container">
         <div class="contact__info">
@@ -991,7 +882,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__container">
       <div>© 2025 Expert Dry Cleaners</div>
@@ -1006,28 +896,15 @@
       const navLinks = document.querySelectorAll('.nav__link');
       const header = document.getElementById('header');
 
-      // Function to toggle the menu and the hamburger icon state
-      function toggleMenu() {
-          navMenu.classList.toggle('show');
-          navToggle.classList.toggle('active');
-      }
-
       if (navToggle) {
-        navToggle.addEventListener('click', toggleMenu);
-        // Also handle keyboard activation for accessibility
-        navToggle.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleMenu();
-            }
+        navToggle.addEventListener('click', function () {
+          navMenu.classList.toggle('show');
         });
       }
 
       navLinks.forEach((link) => {
         link.addEventListener('click', function () {
-          // Close the menu and remove active state after clicking a link
           navMenu.classList.remove('show');
-          navToggle.classList.remove('active');
         });
       });
 
